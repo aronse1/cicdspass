@@ -44,7 +44,9 @@ jobs:
           go test ./...
 
     - name: Check Code Formatting
-      run: go fmt ./...
+      run: |
+        cd backend
+        go fmt ./...
 
 
 
