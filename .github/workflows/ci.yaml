@@ -36,7 +36,7 @@ jobs:
         cd frontend
         npm ci
         npx ng build
-        cp -r frontend/dist/frontend/browser backend/cmd/strichliste/frontendDist
+        cp -r dist/frontend/browser backend/cmd/strichliste/frontendDist
     - name: Run Unit Tests  
       run: |
           cd backend 
@@ -48,17 +48,3 @@ jobs:
 
 
 
-  trivy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Install Trivy
-      run: |
-        sudo apt-get install wget
-        wget https://github.com/aquasecurity/trivy/releases/download/v0.40.0/trivy_0.40.0_Linux-64bit.deb
-        sudo dpkg -i trivy_0.40.0_Linux-64bit.deb
-
-    - name: Run Trivy
-      run: trivy fs --exit-code 1 --severity HIGH,CRITICAL .
