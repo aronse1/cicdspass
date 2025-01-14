@@ -1,3 +1,6 @@
+
+[![CI Pipeline](https://github.com/aronse1/cicdspass/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/aronse1/cicdspass/actions/workflows/ci.yaml)
+
 # CI/CD Lecture template project
 
 A simple checklist implemented in Golang with an angular frontend.
