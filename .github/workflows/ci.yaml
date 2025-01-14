@@ -54,7 +54,7 @@ jobs:
         go fmt ./...
 
     - name: Copy files via SCP action
-      uses: actions/scp-action@master
+      uses: appleboy/scp-action@master
       with:
         host: dhbw.hoenle.xyz
         username: group7
