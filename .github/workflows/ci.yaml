@@ -58,10 +58,10 @@ jobs:
         ssh-agent -a $SSH_AUTH_SOCK > /dev/null
         mkdir ~/.ssh
         chmod 700 ~/.ssh
-        echo "${{secrets.ssh_private_key}}" > ~/.ssh/id_ed25519
+        echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
         ssh-add ~/.ssh/id_ed25519
-        echo "${{secrets.ssh_private_key}}" > ~/.ssh/known_hosts
+        echo "${{secrets.SSH_PRIVATE_KEY}}" > ~/.ssh/known_hosts
       env:
         SSH_AUTH_SOCK: /tmp/ssh_agent.sock
 
