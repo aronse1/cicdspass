@@ -37,7 +37,7 @@ jobs:
         npm ci
         npx ng build
         mkdir backend/cmd/strichliste/frontendDist
-        cp -r dist/frontend/browser backend/cmd/strichliste/frontendDist
+        cp -r dist/frontend/browser ../backend/cmd/strichliste/frontendDist
     - name: Run Unit Tests  
       run: |
           cd backend 
