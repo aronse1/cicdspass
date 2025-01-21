@@ -30,11 +30,11 @@ jobs:
           name: Coverage-Report
           path: report.html
 
-    - name: Copy files via SCP action
-      uses: appleboy/scp-action@master
-      with:
-        host: dhbw.hoenle.xyz
-        username: group7
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "report.html"
-        target: "/var/www/group7/report.html"
+      - name: Copy files via SCP action
+        uses: appleboy/scp-action@master
+        with:
+          host: dhbw.hoenle.xyz
+          username: group7
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "report.html"
+          target: "/var/www/group7/report.html"
