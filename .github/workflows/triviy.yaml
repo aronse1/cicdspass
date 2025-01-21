@@ -22,7 +22,7 @@ jobs:
           severity: CRITICAL,HIGH
           ignore-unfixed: true
       - name: Run Trivy 
-        run: trivy fs --format template --template "@html.tpl" --output report.html . 
+        run: trivy fs --format template --template "@trivy-html-report-template.tpl" --output report.html . 
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
