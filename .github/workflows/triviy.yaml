@@ -25,7 +25,7 @@ jobs:
         run: trivy fs --format template --template "@trivy-html-report-template.tpl" --output report.html .
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Coverage-Report
           path: report.html
