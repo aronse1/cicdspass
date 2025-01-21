@@ -1,4 +1,3 @@
-version: 2
 on: 
   pull_request:
   workflow_dispatch:
