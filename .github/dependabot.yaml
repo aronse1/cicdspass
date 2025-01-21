@@ -3,7 +3,7 @@ version: 2
 on: 
   pull_request:
   workflow_dispatch:
-  
+
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -13,7 +13,7 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "daily"
-        - package-ecosystem: "go"
+  - package-ecosystem: "go"
     directory: "/backend"
     schedule:
       interval: "daily"
