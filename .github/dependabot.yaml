@@ -1,7 +1,5 @@
-on: 
-  pull_request:
-  workflow_dispatch:
-
+---
+version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
