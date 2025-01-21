@@ -1,4 +1,5 @@
 [![CI Pipeline](https://github.com/aronse1/cicdspass/actions/workflows/ci.yaml/badge.svg)](https://github.com/aronse1/cicdspass/actions/workflows/ci.yaml)
+[![Trivy Pipeline](https://github.com/aronse1/cicdspass/actions/workflows/triviy.yaml/badge.svg)](https://github.com/aronse1/cicdspass/actions/workflows/triviy.yaml)
 # CI/CD Lecture template project
 
 A simple checklist implemented in Golang with an angular frontend.
