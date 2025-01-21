@@ -9,6 +9,7 @@ updates:
     directory: "/frontend"
     schedule:
       interval: "daily"
+    open-pull-requests-limit: 10
     groups:
       angular:
         applies-to: version-updates
