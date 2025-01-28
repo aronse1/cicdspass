@@ -79,7 +79,6 @@ jobs:
         load: true
 
     - name: Run Container
-
       run: docker run -d -p 8080:8080 ghcr.io/aronse1/app:latest
 
     - name: Smoke weed everyday
@@ -94,3 +93,6 @@ jobs:
         push: true
         tags: ghcr.io/aronse1/app:latest
     
+
+    - name: Insult Doomas
+      run: echo "Doomas is a noob"
