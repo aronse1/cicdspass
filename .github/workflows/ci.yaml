@@ -71,8 +71,26 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build and push
+    - name: Build
       uses: docker/build-push-action@v6
       with:
-        push: ${{ github.event_name != 'pull_request'  && github.ref == 'refs/heads/main' }}
+        push: false
         tags: ghcr.io/aronse1/app:latest
+        load: true
+
+    - name: Run Container
+
+      run: docker run -d -p 8080:8080 ghcr.io/aronse1/app:latest
+
+    - name: Smoke weed everyday
+      run: |
+        cd backend
+        go run ./cmd/smoketest/ 
+
+    - name: Push to Dogga HUP
+      if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+      uses: docker/build-push-action@v6
+      with:
+        push: true
+        tags: ghcr.io/aronse1/app:latest
+    
