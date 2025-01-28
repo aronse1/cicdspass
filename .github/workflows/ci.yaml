@@ -74,6 +74,7 @@ jobs:
     - name: Build
       uses: docker/build-push-action@v6
       with:
+        name: ImageGruppe7
         push: false
         tags: ghcr.io/aronse1/app:latest
         load: true
@@ -96,3 +97,24 @@ jobs:
 
     - name: Insult Doomas
       run: echo "Doomas is a noob"
+
+    - name: Deploy on VPS
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: dhbw.hoenle.xyz
+        username: group7
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 22
+        script: |
+          IMAGE_NAME=ghcr.io/aronse1/app:latest
+          CONTAINER_NAME=Gruppe7
+            
+
+          docker pull ImageGruppe7
+            
+
+          docker stop $CONTAINER_NAME || true
+          docker rm $CONTAINER_NAME || true
+            
+          # Start the new container
+          docker run -d --name $CONTAINER_NAME -p 7777:7777 ImageGruppe7
