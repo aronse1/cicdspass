@@ -99,7 +99,7 @@ jobs:
       run: echo "Doomas is a noob"
 
     - name: Deploy on VPS
-      uses: appleboy/ssh-action@v0.1.6
+      uses: appleboy/ssh-action@v1.2.1
       with:
         host: dhbw.hoenle.xyz
         username: group7
